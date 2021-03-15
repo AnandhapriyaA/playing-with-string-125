@@ -1,0 +1,27 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class mains extends UserMainCode {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("enter array length");
+		int len = scan.nextInt();
+		String[] str = new String[len];
+		System.out.println("enter string array");
+		for (int i = 0; i < len; i++)
+			str[i] = scan.nextLine();
+		sortArray(str);
+	}
+}
+class UserMainCode {
+	static String[] sortArray(String[] array) {
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < array.length; i++) {
+			array[i] = array[i].toLowerCase();
+		}
+		Arrays.sort(array);
+		for (int i = 0; i < array.length; i++)
+			System.out.println(array[i]);
+		return array;
+	}
+}
